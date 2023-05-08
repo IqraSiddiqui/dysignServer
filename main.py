@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PIL import Image
 import tensorflow as tf
-import opencv-python 
+import cv2 
 import numpy as np
 import pandas as pd
 from scipy.spatial import distance as dist
