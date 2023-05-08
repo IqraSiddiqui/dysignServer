@@ -1,2 +1,11 @@
-flask>=2.0.0
-gunicorn>=20.1.0
+Flask==2.2.3
+Flask-Cors==3.0.10
+Pillow==8.4.0
+tensorflow==2.12.0
+cv2==4.7.0.72
+numpy==1.23.5
+pandas==2.0.0
+scipy==1.10.1
+joblib==1.2.0
+sklearn==1.2.2
+pdf2image==1.16.3
