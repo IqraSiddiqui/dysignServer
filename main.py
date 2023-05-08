@@ -28,7 +28,7 @@ container_client = blob_service_client.get_container_client(container_name)
 blob_client = container_client.get_blob_client(model_blob_name)
 
 # Download the model file
-model_path = 'dysignIncModel.h5'  # Local path to temporarily store the downloaded model file
+model_path = '/tmp/dysignIncModel.h5'  # Local path to temporarily store the downloaded model file
 with open(model_path, "wb") as f:
     f.write(blob_client.download_blob().readall())
 
