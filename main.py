@@ -1,3 +1,8 @@
+import ctypes
+
+# Load libGL.so.1
+ctypes.CDLL("libGL.so.1", mode=ctypes.RTLD_GLOBAL)
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PIL import Image
