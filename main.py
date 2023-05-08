@@ -8,13 +8,32 @@ import io
 from pdf2image import convert_from_path, convert_from_bytes
 from io import BytesIO
 from tensorflow.keras.models import load_model
-
+from azure.storage.blob import BlobServiceClient
+from tensorflow.keras.models import load_model
+import os
 
 app = Flask(__name__)
 cors = CORS(app)
 
+# Define the connection string and container name
+connection_string = "DefaultEndpointsProtocol=https;AccountName=incmodel;AccountKey=j6dCCO0DeV2gUxX78HUVr+ICj3r/tuUXBXedv9KJU/SrMnbiCupRHkrUox/pbEgXNqjdUmG0iv5B+ASt8+T0ag==;EndpointSuffix=core.windows.net"
+container_name = "modelcon"
+model_blob_name = "dysignIncModel.h5"
+
+# Create the BlobServiceClient
+blob_service_client = BlobServiceClient.from_connection_string(connection_string)
+
+# Get a reference to the container and blob
+container_client = blob_service_client.get_container_client(container_name)
+blob_client = container_client.get_blob_client(model_blob_name)
+
+# Download the model file
+model_path = 'dysignIncModel.h5'  # Local path to temporarily store the downloaded model file
+with open(model_path, "wb") as f:
+    f.write(blob_client.download_blob().readall())
+
 # load the model
-model = load_model('dysignIncModel.h5')
+model = load_model(model_path)
 
 def convert_to_jpg(file):
     # Convert PDF or PNG file to JPG
