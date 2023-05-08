@@ -219,10 +219,10 @@ def extract_features(words_lst):
         # sw = word_strokewidth(word)
         # dens = density(word)
         # spatial = distances_spatial(word)
-        curv=random.random()
-        sw=random.random()
-        dens=random.random()
-        spatial=[random.random(),random.random(),random.random(),random.random(),random.random()]
+        curv=random.uniform(0.0, 10.0)
+        sw=random.uniform(0.0, 10.0)
+        dens=random.uniform(0.0, 10.0)
+        spatial=[random.uniform(0.0, 10.0),random.uniform(0.0, 10.0),random.uniform(0.0, 10.0),random.uniform(0.0, 10.0),random.uniform(0.0, 10.0)]
         if spatial is None:
              x=y=w=h=dist=None
         else:
