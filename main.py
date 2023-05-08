@@ -223,7 +223,7 @@ def extract_features(words_lst):
         curv=random.sample(pop, 1)[0]
         sw=random.sample(pop, 1)[0]
         dens=random.sample(pop, 1)[0]
-        spatial=[random.uniform(0.0, 20.0),random.uniform(0.0, 20.0),random.uniform(0.0, 20.0),random.uniform(0.0, 20.0),random.uniform(0.0, 20.0)]
+        spatial=[random.uniform(0.0, 10.0),random.uniform(0.0, 10.0),random.uniform(0.0, 10.0),random.uniform(0.0, 10.0),random.uniform(0.0, 10.0)]
         if spatial is None:
              x=y=w=h=dist=None
         else:
